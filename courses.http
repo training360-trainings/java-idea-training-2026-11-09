@@ -1,0 +1,34 @@
+POST http://localhost:8080/api/courses
+Content-Type: application/json
+
+{
+  "code": "JAVAX-DDD",
+  "title": "Domain Driven Design",
+  "limit": 5
+}
+
+### Enroll
+PUT http://localhost:8080/api/courses/1/enrollments
+Content-Type: application/json
+
+{
+  "courseId": 1,
+  "employeeId": 16
+}
+
+### Find all
+GET http://localhost:8080/api/courses
+
+### Find by id
+GET http://localhost:8080/api/courses/1
+
+### Join
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "name": "John Doe"
+}
+
+### List
+GET  http://localhost:8080/api/employees

@@ -1,0 +1,245 @@
+# IntelliJ IDEA
+
+https://www.jetbrains.com/idea/whatsnew/
+
+https://github.com/l0ng-ai/openidea
+
+Régebbről:
+ 
+ org.jetbrains:annotations
+ 
+ new Address - létrehoz változót
+ rövidítések!
+ Alt + 1 Project, Alt + Insert -> new Class
+ postfix completition
+ 
+ Sonar és Analysis disable: Git ablakában
+
+- Gyakori beállítások, beállítások import/export
+- Remote development
+- Gyors megnyitás, fájl vagy console
+- IDE
+    - Ctrl Shift A - Menu / Shortcut
+- Code editing, navigation
+  - Navigation
+    - Double Shift - Search Everywhere
+        - https://www.jetbrains.com/help/idea/searching-everywhere.html#search_all
+    - Csomagokat ne tömörítse
+    - Project ablakban a cím legördülő (Project Views)
+    - Project ablakban Space - preview files
+    - Settings / Show indent guides - Project ablakban függőleges vonalak
+  - Fájlra pozícionálás
+  - Decompiler
+    - https://github.com/jetBrains/fernflower
+  - 3rd party forráskód
+  - Edit
+    - Create class/method
+    - Delegate
+  - Language injection
+    - `//language=JSON`
+  - Kijelölés középső egérgombbal: rectangular select
+  - Shortcuts (https://www.jetbrains.com/help/idea/discover-intellij-idea.html#user-interface)
+    - `.`, `..` Command completion
+    - Ctrl Shift Backspace ugrás a legutóbbi szerkesztés helyére
+    - Shift Enter - Add line before
+    - Ctrl Alt Enter - Add line after
+    - Alt Insert a Project ablakban
+    - Full Line code completion elfogadása
+        - Tab - egész
+        - Ctrl Right - szó
+        - End - soronként
+    - Ctrl Shift V - Copy - Paste history
+    - Alt + J multiple selection
+    - Alt + 1 - tool window választás
+    - Change Editor font size
+    - Alt + F12 Terminal window
+    - F2 Code Issues
+    - Ctrl + E recent files
+    - Ctrl + W - extend selection
+    - Ctrl + B - go to declaration
+    - Alt F7 - find usages
+    - kétszer Ctrl - Run anything
+    - Help / Keyboard Shortcuts PDF
+    - https://plugins.jetbrains.com/plugin/14625-keymap-nationalizer
+    - Ctrl Shift P - Type info
+    - Ctrl P - parameter info
+        - Settings: Parameter Info / Show full method signatures
+    - Ctrl Q - Quick documentation
+    - Ctrl Shift I - quick definition
+    - https://www.jetbrains.com/help/inspectopedia/Java.html
+  - Navigáció
+    - Alt Up, Alt Down - Ugrálás a metódusok között
+    - Jobb klikk / Go to
+    - Alt F1 - Select in
+    - Find / Search Structurally
+        - https://www.jetbrains.com/help/idea/structural-search-and-replace.html#structural_replace
+  - Compare
+    - Két fájl kiválasztása, majd Ctrl D
+      - Könyvtárra is működik
+    - Jobb klikk / Compare with Clipboard
+    - Ctrl Shift / Open Blank Diff Window
+  - Scratch file
+  - Scope
+    - https://www.jetbrains.com/help/idea/configuring-scopes-and-file-colors.html
+    - Fájlok egy csoportja
+    - `src:demo.dataoriented..*`
+    - Más színnel jeleníthető meg
+    - Keresés/cserénél
+  - Settings / Show method separators
+  - Code generation
+    - Ctrl Alt T - Surround with    
+  - Convert all Javadoc to Markdown comments in a project, module, or directory
+- Refactoring    
+- Formázás
+- Lint
+    - SonarQube
+    - Create custom inspections - Structural search
+    - Dependency Structure Matrix plugin
+        - Kb. használhatatlan
+- Profiling
+    - CPU and memory live charts
+    - CPU and allocation
+    - Heap dump
+    - Thread dump
+- Lombok
+- Maven
+    - Code complete
+        - Eddig: local cache, 2026.02-től 
+    - Project szinkronizálás
+    - Artifacts Repository Search
+        - `pom.xml` Alt Insert / Dependency
+        - Automatikus kiegészítés esetén jelöli, hogy mi van lokálisan és mi felhőben
+- Run
+    - Run configuration
+- Debug
+    - Remote debug
+    - Collection viewer
+    - Renderer, `@Renderer`
+    - Java Stream Debugger
+    - Logpoints, Non-suspending breakpoints
+        - Csak naplóz
+        - Ciklusban kérdezett le, és futás közben tette fel a logpointot
+        - 3rd party libben is el lehet helyezni, míg a loggert nem
+        - Open logpoint definition
+    - Label, Object marker        
+    - Modify
+        - Return to a previous stack frame
+        - Force return from the current method
+        - Throw an exception
+        - HotSwap
+    - Hibernate debugger
+        - SQL, JPQL
+        - Console
+        - Transaction id
+- Performance
+    - Profiler
+    - Performance Testing
+    - Deadlock
+- Git 
+    - Worktrees https://www.jetbrains.com/help/idea/use-git-worktrees.html
+        - AI-driven development
+- Testing
+    - Generate
+    - Coverage
+- JDBC
+- JPA
+    - JPABuddy
+        - Flyway
+        - Liquibase
+    - Spring Data JPA generált kód, AOT
+        - Csak beteszi a mvn goal hívást a build elé
+    - Query kódkiegészítés
+    - Metódusnév kódkiegészítés
+- DB explorer
+    - View DDL
+    - Diagram
+    - Query execution plan https://www.jetbrains.com/help/idea/query-execution-plan.html
+    - Cross database queries https://www.jetbrains.com/help/idea/cross-database-queries.html
+    - Export and import https://www.jetbrains.com/help/idea/exporting-and-importing-data.html
+- Spring Boot
+    - Core
+        - Spring Beans Dependencies diagram
+    - JSpecify
+    - Initializer
+    - properties autocomplete, click
+    - Spring Debugger Plugin
+      - Beans
+      - Properties
+      - Active DB Connection Display
+      - Transaction Status Display, entity
+      - L2 cache
+      - Entity State in Watches
+    - Beanek közötti ugrás    
+    - Futás közben, debug, láthatóak a context-ben lévő beanek
+    - Thymeleaf
+    - Spring Modulith
+    - AOP
+    - Language injection
+        - SPEL kódkiegészítés
+    - Spring Messaging
+    - Security
+        - A api végpontok mellett megmutatja, milyen role-okkal lehet meghívni
+        - HTTP client-ben is! (unlock)
+        - User credentialt is meg lehet adni
+        - Navigate to security configuration
+        - Spring Debugger automatically injects a custom x-spring-debugger-security-decisions header into HTTP responses
+        - Security contextin debug
+    - Meg lehet nézni a Spring Cache tartalmát
+    - IDE mutatja, hogy melyik Flyway migration lett lefuttatva
+        - Le is lehet futtatni
+        - Kezeli a faildet is, megmutatja, hogy melyik statement rossz
+    - Properties
+        - Mi az értéke, és honnan jön
+    - Web
+    - Cron expressions
+    - Structure / Logical (Controller, Autowires, Endpoints)
+    - Runtime endpoints
+- JSON, JSON schema, JSONPath
+- HTTP Client, Endpoints (OpenAI), OpenAPI Specifications (Swagger/Redoc)
+    - Kódkiegészítés
+    - Dynamic variables
+    - Ciklus
+        - Iterate over collections in variables
+    - Auth
+    - Export draft, Swagger, Redocly
+    - Futtatás CLI-ből
+- Docker, Kubernetes
+    - Docker compose templates
+    - compose fájlban mutatja, hogy fut-e
+- DevContainers
+    - Projekt megnyitása, JDK beállítás, futtatás
+- Console/Terminal ("Enable New Terminal")
+    - Ctrl Space - Command Completition Suggestion
+    - Terminal tabs in the editor
+- Markdown
+  - Language injection
+  - Mermaid, PlantUML
+- AI
+    - MCP
+    - Új AI agent mode
+    - Air
+    - Air telepítés, Claude CLI telepítés, környezeti változó, IDEA újraindítás, New session, bejelentkezés a Claude-ba
+    - Ctrl Ctrl - prompt
+- ActiveMQ
+- Cucumber/Gherkin
+- Jakarta EE, WildFly, JSF, XML, SOAP
+- Test Automation/Selenium
+- Pair programming
+- Task Management, Time Tracking
+- AppGlass
+    Production alkalmazáshoz hozzá lehet kapcsolódni    
+
+Pluginek:
+
+- Key Promoter X plugin
+- Rainbow Brackets
+- String Manipulation
+- CodeGlance Pro
+- PlantUML
+- Develocity
+    - `extensions.xml` fájl a `.mvn` könyvtárba
+    - https://docs.develocity.ai/maven/2.6/maven-extension/
+    - `mvn package` menüből
+    - Run ablak Timeline tab
+- JMS
+    - jms-messenger, 5 éve frissült, ClassNotFoundException

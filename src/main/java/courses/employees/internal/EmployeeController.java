@@ -1,0 +1,36 @@
+package courses.employees.internal;
+
+import courses.employees.EmployeeDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/api/employees")
+public class EmployeeController {
+    private final EmployeeService employeeService;
+
+    @PostMapping
+    public EmployeeDto join(@RequestBody EmployeeDto employee) {
+        return employeeService.join(employee);
+    }
+
+    @GetMapping
+    public List<EmployeeDto> findAllBy() {
+        return employeeService.findAllBy();
+    }
+
+    @GetMapping("/{id}")
+    public EmployeeDto findById(@PathVariable long id) {
+        return employeeService.findById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void leave(@PathVariable long id) {
+        employeeService.leave(id);
+    }
+}
