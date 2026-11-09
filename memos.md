@@ -58,7 +58,6 @@ Régebbről:
     - Ctrl + W - extend selection
     - Ctrl + B - go to declaration
     - Alt F7 - find usages
-    - kétszer Ctrl - Run anything
     - Help / Keyboard Shortcuts PDF
     - https://plugins.jetbrains.com/plugin/14625-keymap-nationalizer
     - Ctrl Shift P - Type info
@@ -96,11 +95,6 @@ Régebbről:
     - Create custom inspections - Structural search
     - Dependency Structure Matrix plugin
         - Kb. használhatatlan
-- Profiling
-    - CPU and memory live charts
-    - CPU and allocation
-    - Heap dump
-    - Thread dump
 - Lombok
 - Maven
     - Code complete
@@ -117,6 +111,7 @@ Régebbről:
     - Renderer, `@Renderer`
     - Java Stream Debugger
     - Logpoints, Non-suspending breakpoints
+        - Shift + Click
         - Csak naplóz
         - Ciklusban kérdezett le, és futás közben tette fel a logpointot
         - 3rd party libben is el lehet helyezni, míg a loggert nem
@@ -127,12 +122,18 @@ Régebbről:
         - Force return from the current method
         - Throw an exception
         - HotSwap
-    - Hibernate debugger
+    - Hibernate debugger plugin
+        - Debug módban kell indítani
         - SQL, JPQL
         - Console
         - Transaction id
 - Performance
     - Profiler
+        - Flame Graph
+    - CPU and memory live charts
+    - CPU and allocation
+    - Heap dump
+    - Thread dump
     - Performance Testing
     - Deadlock
 - Git 
@@ -184,7 +185,7 @@ Régebbről:
         - Navigate to security configuration
         - Spring Debugger automatically injects a custom x-spring-debugger-security-decisions header into HTTP responses
         - Security contextin debug
-    - Meg lehet nézni a Spring Cache tartalmát
+    - Meg lehet nézni a Spring Cache tartalmát: Coming in 2026.3.1
     - IDE mutatja, hogy melyik Flyway migration lett lefuttatva
         - Le is lehet futtatni
         - Kezeli a faildet is, megmutatja, hogy melyik statement rossz
@@ -208,7 +209,7 @@ Régebbről:
     - compose fájlban mutatja, hogy fut-e
 - DevContainers
     - Projekt megnyitása, JDK beállítás, futtatás
-- Console/Terminal ("Enable New Terminal")
+- Terminal ("Enable New Terminal")
     - Ctrl Space - Command Completition Suggestion
     - Terminal tabs in the editor
 - Markdown
