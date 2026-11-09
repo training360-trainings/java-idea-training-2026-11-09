@@ -3,7 +3,7 @@ package courses.enrollments.adapter.gateway;
 import courses.employees.EmployeeHostGateway;
 import courses.enrollments.application.outboundport.EmployeeGatewayPort;
 import courses.enrollments.domain.enrollments.EmployeeId;
-import infra.Gateway;
+import courses.infra.Gateway;
 import lombok.RequiredArgsConstructor;
 
 @Gateway

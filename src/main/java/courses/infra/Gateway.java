@@ -1,4 +1,4 @@
-package infra;
+package courses.infra;
 
 import org.springframework.stereotype.Component;
 
