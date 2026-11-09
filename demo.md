@@ -107,7 +107,7 @@ $Type$ $field$;
 
 - Spring Beans Dependencies diagram
 - Beanek közötti ugrás    
-- Spring Debugger Plugin
+- Spring Debugger Plugin (Demó: Claude Employee update)
     - Beans
     - Properties
     - Active DB Connection Display
@@ -115,6 +115,7 @@ $Type$ $field$;
     - L2 cache
     - Entity State in Watches
 - Language injection: SpEL
+    - (Demó: `@PreAuthorize` `"hasAnyRole() && employee.id() > 10"`)
 
 ## Tip: Spring DevTools
 
@@ -124,10 +125,36 @@ $Type$ $field$;
 - Metódusnév kódkiegészítés
 - JPA console
 - JPABuddy
+    - Persistence view
+        - JPA Entity
+        - DTO
+        - Repository
+        - References
     - Flyway
-    - Liquibase
+        
+
+- Dependency: Flyway starter
+
+```xml
+<dependency>
+    <groupId>org.flywaydb</groupId>
+    <artifactId>flyway-database-postgresql</artifactId>
+</dependency>
+```
+
+- New Flyway init migration
+- Run
+
 - Spring Data JPA generált kód, AOT
     - Csak beteszi a mvn goal hívást a build elé
+
+```shell
+mvnw -Pnative package
+```
+
+- Mark Directory As > Mark Generated Sources Root
+- `-Dspring.aot.enabled=true`
+- Breakpoint
 
 ## Tip: Hibernate
 
@@ -150,7 +177,14 @@ $Type$ $field$;
 ## Tip: Database
 
 - [Query execution plan](https://www.jetbrains.com/help/idea/query-execution-plan.html)
-    - Enroll (futtatás console-ból, majd execution plan, )
+    - Enroll (futtatás console-ból, majd execution plan)
+
+```sql
+create index idx_enrollments_course_id on enrollments (course_id);
+```
+
+- Újra plan
+
 - [Cross database queries](https://www.jetbrains.com/help/idea/cross-database-queries.html) (demó nélkül)
 
 ## Tip: Language injection
@@ -217,6 +251,7 @@ Content-Type: application/json
 ## Tip: Markdown
 
 - Language injection
+- Run in terminal
 - Mermaid, PlantUML
 
 ## Tip: Profiler
