@@ -61,6 +61,11 @@ $Type$ $field$;
 - Jobb klikk / Compare with Clipboard
 - Ctrl Shift / Open Blank Diff Window
 
+## Tip: Docker Compose
+
+- Docker compose templates
+- Log
+
 ## Tip: Maven
 
 - `pom.xml` Alt Insert / Dependency
@@ -232,11 +237,6 @@ Content-Type: application/json
 
 - OpenAPI
 - Export draft, Swagger, Redocly
-
-## Tip: Docker Compose
-
-- Docker compose templates
-- Log
 
 ## Tip: Git 
     
