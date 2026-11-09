@@ -41,12 +41,11 @@ public class CourseRepository implements CourseRepositoryPort {
     }
 
     private @NonNull Course convert(CourseJpaEntity entity) {
-        var domain = new Course(entity.getId(), new CourseCode(entity.getCode()),
-                entity.getTitle(), entity.getLimit(), new ArrayList<>());
-        for (var enrollment : entity.getEnrollments()) {
-            domain.getEnrollments().add(new Enrollment(new EmployeeId(enrollment.getEmployeeId()), enrollment.getEnrollmentDate()));
-        }
-        return domain;
+        var enrollments = entity.getEnrollments().stream()
+                .map(enrollment -> new Enrollment(new EmployeeId(enrollment.getEmployeeId()), enrollment.getEnrollmentDate()))
+                .toList();
+        return new Course(entity.getId(), new CourseCode(entity.getCode()),
+                entity.getTitle(), entity.getLimit(), new ArrayList<>(enrollments));
     }
 
     @Override
