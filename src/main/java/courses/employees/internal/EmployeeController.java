@@ -29,6 +29,11 @@ public class EmployeeController {
         return employeeService.findById(id);
     }
 
+    @PutMapping("/{id}")
+    public EmployeeDto changeName(@PathVariable long id, @RequestBody ChangeNameCommand command) {
+        return employeeService.changeName(id, command);
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void leave(@PathVariable long id) {

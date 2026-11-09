@@ -3,7 +3,9 @@ package courses.employees.internal;
 import courses.employees.EmployeeDto;
 import courses.employees.EmployeeHostGateway;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -28,6 +30,14 @@ public class EmployeeService implements EmployeeHostGateway {
     public EmployeeDto findById(long id) {
         return employeeRepository.findDtoById(id, EmployeeDto.class)
                 .orElseThrow(() -> new IllegalArgumentException("Employee not found with id " + id));
+    }
+
+    @Transactional
+    public EmployeeDto changeName(long id, ChangeNameCommand command) {
+        var entity = employeeRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Employee not found with id " + id));
+        entity.setName(command.name());
+        return new EmployeeDto(entity.getId(), entity.getName());
     }
 
     @Override

@@ -1,0 +1,1 @@
+create index idx_enrollments_course_id on enrollments (course_id);

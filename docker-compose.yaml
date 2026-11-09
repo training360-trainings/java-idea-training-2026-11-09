@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: courses-postgres
+    environment:
+      POSTGRES_DB: courses
+      POSTGRES_USER: courses
+      POSTGRES_PASSWORD: courses
+    ports:
+      - "5432:5432"

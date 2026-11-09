@@ -13,7 +13,7 @@ Content-Type: application/json
 
 {
   "courseId": 1,
-  "employeeId": 16
+  "employeeId": 3
 }
 
 ### Find all
@@ -32,3 +32,36 @@ Content-Type: application/json
 
 ### List
 GET  http://localhost:8080/api/employees
+
+### Change name
+PUT {{url}}}/api/employees/1
+Content-Type: application/json
+
+{
+  "name": "Jane Doe"
+}
+
+### Join loop
+< {%
+    request.variables.set("employees", [
+        {"name": "John Doe"},
+        {"name": "Jack Doe"},
+        {"name": "Jane Doe"}
+    ]);
+%}
+
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "name": "{{$.employees..name}}"
+}
+
+> {%
+    let current = request.variables.get("employees")[request.iteration()];
+    client.test(`Employee ${current.name} created`, () => {
+        client.assert(response.status === 201, `Expected 201, got ${response.status}`);
+        let name = jsonPath(response.body, "$.name");
+        client.assert(name === current.name, `Expected ${current.name}, got ${name}`);
+    });
+%}

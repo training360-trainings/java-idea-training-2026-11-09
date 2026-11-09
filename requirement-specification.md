@@ -16,3 +16,17 @@ Valamint van egy címe. Meghirdetéskor meg lehet
 adni, hogy összesen hányan jelentkezhetnek az adott
 képzésre. Amennyiben betelik, többen nem jelentkezhetnek.
 El kell tárolni a jelentkezés dátumát is.
+
+```plantuml
+@startuml
+left to right direction
+actor "HR" as hr
+actor "Képzés adminisztrátor" as ca
+rectangle Courses {
+usecase "Alkalmazott beléptetése" as UC1
+usecase "Alkalmazott kiléptetése" as UC2
+usecase "Jelentkezés képzésre" as UC4
+usecase "Képzés meghirdetése" as UC3
+}
+```
+
