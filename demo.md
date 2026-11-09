@@ -52,14 +52,14 @@ $Type$ $field$;
 - Ctrl Alt Enter - Add line after
 - `.`, `..` Command completion
 - Ctrl Shift V - Copy - Paste history
-- Alt Insert / Delegate (Controllerben)
+- Alt Insert / Delegate (Demó: Controllerben)
 
 ## Tip: Compare
 
 - Két fájl kiválasztása, majd Ctrl D
     - Könyvtárra is működik
 - Jobb klikk / Compare with Clipboard
-- Ctrl Shift / Open Blank Diff Window
+- Ctrl Shift A / Open Blank Diff Window
 
 ## Tip: Docker Compose
 
@@ -74,7 +74,7 @@ $Type$ $field$;
 ## Tip: Debug
 
 - Collection viewer
-    - Debugban a List-en Explore elements
+    - Debugban a List-en Explore elements (Demó: breakpoint `EmployeeService.findAllBy`)
 - Renderer, `@Renderer`
 
 ```xml
@@ -98,7 +98,7 @@ $Type$ $field$;
 - Logpoints, Non-suspending breakpoints
     - Shift + Click
     - Csak naplóz
-    - Ciklusban kérdezett le, és futás közben tette fel a logpointot
+    - Futás közben is feltehető a logpoint
     - 3rd party libben is el lehet helyezni, míg a loggert nem
     - Open logpoint definition
 - Label, Object marker
@@ -129,6 +129,7 @@ $Type$ $field$;
 - Query kódkiegészítés
 - Metódusnév kódkiegészítés
 - JPA console
+    - Repository metódust is lehet futtatni
 - JPABuddy
     - Persistence view
         - JPA Entity
@@ -175,12 +176,13 @@ mvnw -Pnative package
 - User credentialt is meg lehet adni
 - Navigate to security configuration
 - Spring Debugger automatically injects a custom x-spring-debugger-security-decisions header into HTTP responses
-- Security contextin debug
+- Security context in debug
 
 ## Tip: Spring Modulith
 
 ## Tip: Database
 
+- Set color
 - [Query execution plan](https://www.jetbrains.com/help/idea/query-execution-plan.html)
     - Enroll (futtatás console-ból, majd execution plan)
 
@@ -231,12 +233,13 @@ Content-Type: application/json
 %}
 ```
 
-- Futtatás CLI-ből (demó nálkül)
+- Futtatás CLI-ből (demó nélkül)
 
 ## Tip: Endpoints
 
+- Generate request
 - OpenAPI
-- Export draft, Swagger, Redocly
+- Export draft, Swagger, Redocly, bugos
 
 ## Tip: Git 
     
@@ -253,6 +256,18 @@ Content-Type: application/json
 - Language injection
 - Run in terminal
 - Mermaid, PlantUML
+
+```plantuml
+@startuml
+left to right direction
+actor "HR" as hr
+actor "Képzés adminisztrátor" as ca
+rectangle Courses {
+usecase "Alkalmazott beléptetése" as UC1
+usecase "Alkalmazott kiléptetése" as UC2
+usecase "Jelentkezés képzésre" as UC4
+usecase "Képzés meghirdetése" as UC3
+}
 
 ## Tip: Profiler
 
