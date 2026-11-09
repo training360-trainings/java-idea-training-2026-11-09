@@ -25,6 +25,7 @@
 
 - Shift Shift - Search Everywhere
 - Search Structurally
+    - Replace
 
 ```
 @OneToMany(fetch = FetchType.EAGER)
@@ -123,6 +124,24 @@ $Type$ $field$;
     - (Demó: `@PreAuthorize` `"hasAnyRole() && employee.id() > 10"`)
 
 ## Tip: Spring DevTools
+
+## Tip: JSpecify, NullAway
+
+- Claude:  Vezesd be a nullaway-t!
+- `EmployeeService::findById` `@Nullable`
+
+`EmployeeController`:
+
+```java
+@Nullable
+public EmployeeDto findById(@PathVariable long id) {
+    var employee = employeeService.findById(id);
+    if (employee != null) {
+        log.info("Id: {}", employee.id());
+    }
+    return employee;
+}
+```
 
 ## Tip: JPA
 
@@ -248,7 +267,7 @@ Content-Type: application/json
 
 ## Tip: Terminal
 
-- Ctrl Space
+- Ctrl Space (WSL-ben)
 - Terminal tabs in the editor
 
 ## Tip: Markdown
@@ -268,6 +287,7 @@ usecase "Alkalmazott kiléptetése" as UC2
 usecase "Jelentkezés képzésre" as UC4
 usecase "Képzés meghirdetése" as UC3
 }
+```
 
 ## Tip: Profiler
 
