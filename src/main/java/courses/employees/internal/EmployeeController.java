@@ -14,6 +14,7 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public EmployeeDto join(@RequestBody EmployeeDto employee) {
         return employeeService.join(employee);
     }
